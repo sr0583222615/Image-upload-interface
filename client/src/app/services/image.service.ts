@@ -8,7 +8,7 @@ import { catchError, finalize, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ImageService {
-  private readonly defaultImage: string = 'assets/no-image.png';
+  defaultImage: string = 'assets/no-image.png';
 
   constructor(private apiService: ApiService, private snackBar: MatSnackBar) { }
 
@@ -49,17 +49,21 @@ export class ImageService {
     if (error.status === 0) {
       this.showError('השרת לא פעיל');
       return of();
-    } else if (error.status >= 500) {
+    } 
+    else if (error.status >= 500) {
       this.showError('ישנה בעיה בשרת');
       return of();
-    } else {
+    } 
+    else {
       this.showError(`שגיאה בהעלאת התמונה: ${error.status}`);
       return of(this.defaultImage);
     }
   }
 
-  private showError(message: string): void {
+  showError(message: string): void {
     this.snackBar.dismiss();
     this.snackBar.open(message, 'סגור', { duration: 3000 });
   }
+
+
 }

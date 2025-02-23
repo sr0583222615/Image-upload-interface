@@ -4,7 +4,7 @@ import { ImageComponent } from './image/image.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ ImageComponent],
+  imports: [ImageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
