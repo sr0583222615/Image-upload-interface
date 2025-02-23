@@ -1,26 +1,19 @@
 איך להפעיל את התוכנית:
 1. הפעלת צד ה-Angular:
 ראשית, יש לוודא שהתקנת את כל התלויות:
-bash
-Copy
-Edit
+
 npm install
 לאחר מכן, הרץ את אפליקציית Angular:
-bash
-Copy
-Edit
+
 ng serve
 האפליקציה תתפקד בכתובת http://localhost:4200.
 2. הפעלת צד ה-Node.js:
 יש לוודא שהתלויות ב-Node.js מותקנות:
-bash
-Copy
-Edit
+
 npm install
 לאחר מכן, הרץ את השרת:
-bash
-Copy
-Edit
+
+
 node server.js
 השרת יפעל בכתובת http://localhost:3001.
 מה יש בתוכנית:
