@@ -1,0 +1,145 @@
+/* סגנון כללי */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%; /* מבטיח שהדף תופס את כל הרוחב */
+    display: flex;
+    justify-content: center; /* ממקם את התוכן במרכז אופקית */
+    align-items: center; /* ממקם את התוכן במרכז אנכית */
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* מבטל גלילה על הדף */
+}
+
+/* כרטיס התמונה */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* תורם למיקום הכפתור מתחת לכרטיס */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.image-card {
+    width: 75vw; /* 75% רוחב המסך */
+    height: 75vh; /* 75% גובה המסך */
+    background-color: white;
+    border-radius: 0; /* ביטול רדיוס קצוות */
+    box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: 10%; /* הוספת מרווח בין הכרטיס לכותרת */
+}
+
+/* כותרת ה-Toolbar */
+mat-toolbar {
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* כפתור העלאת קובץ */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%; /* מרווח קטן מעל הכפתור */
+    width: 75vw; /* ברוחב של ה-card */
+}
+
+.upload-container button {
+    width: 100%; /* הגדרת הכפתור שיהיה באורך של ה-card */
+    padding: 1rem;
+    border-radius: 0; /* ביטול רדיוס קצוות לכפתור */
+    box-sizing: border-box; /* מוודא שה padding לא מוסיף לגלילה */
+}
+
+/* מיכל התמונה */
+.image-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0; /* ביטול רדיוס קצוות למיכל התמונה */
+}
+
+/* תמונה */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ספינר טעינה */
+.spinner-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* הודעת שגיאה */
+.error-message {
+    color: red;
+    font-size: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+/* התאמות למסכים קטנים יותר */
+@media (max-width: 900px) {
+    .image-card {
+        width: 80%;
+        height: 70vh; /* עדכון גובה בכדי להיות פחות מ-100% */
+    }
+
+    .upload-container {
+        width: 80%;
+    }
+
+    .upload-container button {
+        padding: 1rem;
+    }
+}
+
+/* התאמות למסכים קטנים מאוד (מובייל) */
+@media (max-width: 600px) {
+    .image-card {
+        width: 90%;
+        height: 60vh;
+    }
+
+    .upload-container {
+        width: 90%;
+    }
+
+    .upload-container button {
+        padding: 1rem;
+    }
+
+    .image-container {
+        aspect-ratio: 4 / 3;
+    }
+}

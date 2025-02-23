@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <span>ממשק להעלאת תמונות</span>
+  </mat-toolbar>
+  
+  <div class="container">
+    <mat-card class="image-card">
+      <mat-card-content>
+        <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+  
+        <div *ngIf="imageUrl" class="image-container">
+          <img [src]="imageUrl" alt="There is a problem displaying the image." />
+        </div>
+  
+        <div *ngIf="error" class="error-message">
+          {{ error }}
+        </div>
+  
+        <div *ngIf="imageUrl === defaultImage && !loading" class="error-message">
+          יש בעיה בהצגת התמונה
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+    <div class="upload-container">
+      <input type="file" id="fileInput" (change)="onFileChange($event)" hidden #fileInput />
+      <button mat-raised-button color="accent" (click)="fileInput.click()">
+        בחר תמונה
+      </button>
+    </div>
+  </div>
+  
